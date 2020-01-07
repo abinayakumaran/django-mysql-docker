@@ -1,5 +1,5 @@
 # Core
-django==2.2.5
+django==2.2.8
 gunicorn==19.9.0
 djangorestframework==3.9.1
 django_extensions
