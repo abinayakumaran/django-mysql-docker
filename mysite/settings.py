@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysite',
         'USER': 'root',
-        'PASSWORD': 'kube_10d',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
