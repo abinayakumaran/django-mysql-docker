@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
+from .views import RegisterView, CustomLoginView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^', include('news.urls')),
+    url(r'^', include('category.urls')),
+    url(r'^rest-auth/login/', CustomLoginView.as_view()),
+    url(r'^rest-auth/registration/', RegisterView.as_view()),
+    url(r'^rest-auth/', include('rest_auth.urls')),
 ]
