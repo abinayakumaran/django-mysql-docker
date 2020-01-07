@@ -9,4 +9,4 @@ django-allauth==0.39.1
 
 #mysql
 mysqlclient==1.4.4
-django-mysql
+django-mysql==2.2.0
