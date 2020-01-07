@@ -1,0 +1,8 @@
+# Core
+django==2.2.5
+gunicorn==19.9.0
+django_extensions
+
+#mysql
+mysqlclient==1.4.4
+django-mysql
