@@ -1,4 +1,4 @@
-version: '3.7'
+version: '2.1'
 
 services:
   mysql:
@@ -7,11 +7,14 @@ services:
     environment:
         MYSQL_DATABASE: 'mysite'
         MYSQL_ROOT_PASSWORD: 'root'
+    healthcheck:
+        test: "/usr/bin/mysql --user=root --password=root --execute \"SHOW DATABASES;\""
+        timeout: 5s
+        retries: 3
     ports:
       - "3307:3306"
     container_name: mysql 
-
-      
+   
   web:
     restart: always
     image: web
@@ -20,14 +23,12 @@ services:
       - ./:/code
     ports:
       - "8002:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
     links:
       - mysql
-    networks:
-      - django-mysql-docker_default
-    depends_on:
-      - mysql
 
-networks:
-  django-mysql-docker_default:
-    external: true
+
+
 
