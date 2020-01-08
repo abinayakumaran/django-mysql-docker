@@ -1,4 +1,4 @@
-version: '2'
+version: '3.7'
 
 services:
   mysql:
@@ -19,6 +19,15 @@ services:
     volumes:
       - ./:/code
     ports:
-      - "8010:8000"
+      - "8002:8000"
     links:
       - mysql
+    networks:
+      - django-mysql-docker_default
+    depends_on:
+      - mysql
+
+networks:
+  django-mysql-docker_default:
+    external: true
+
