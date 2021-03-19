@@ -1,7 +1,7 @@
 # Core
 django==2.2.5
 gunicorn==19.9.0
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 django_extensions
 django-rest-auth==0.9.3
 django-allauth==0.39.1
